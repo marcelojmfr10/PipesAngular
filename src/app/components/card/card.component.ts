@@ -7,7 +7,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {
-
   title = input.required();
-
- }
+}

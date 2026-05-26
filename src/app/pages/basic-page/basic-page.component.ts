@@ -1,5 +1,17 @@
-import { DatePipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, effect, inject, LOCALE_ID, signal } from '@angular/core';
+import {
+  DatePipe,
+  LowerCasePipe,
+  TitleCasePipe,
+  UpperCasePipe,
+} from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  LOCALE_ID,
+  signal,
+} from '@angular/core';
 import { AvailableLocale, LocaleService } from '../../services/locale.service';
 
 @Component({
@@ -9,7 +21,6 @@ import { AvailableLocale, LocaleService } from '../../services/locale.service';
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class BasicPageComponent {
-
   localeService = inject(LocaleService);
   currentLocale = signal(inject(LOCALE_ID));
 
@@ -21,7 +32,7 @@ export default class BasicPageComponent {
 
   tickingDateEffect = effect((onCleanup) => {
     const interval = setInterval(() => {
-      this.customDate.set(new Date())
+      this.customDate.set(new Date());
     }, 1000);
 
     onCleanup(() => {
@@ -29,8 +40,7 @@ export default class BasicPageComponent {
     });
   });
 
-  changeLocale(locale: AvailableLocale){
+  changeLocale(locale: AvailableLocale) {
     this.localeService.changeLocale(locale);
   }
-
 }

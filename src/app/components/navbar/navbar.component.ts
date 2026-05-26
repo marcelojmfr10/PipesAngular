@@ -9,15 +9,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-
   // recordar que siempre se puede desestructurar, por ejemplo title y path
   routes = routes.map((route) => ({
     title: route.title ?? '',
-    path: route.path ?? ''
+    path: route.path ?? '',
   }));
-
-
-
-
-
- }
+}

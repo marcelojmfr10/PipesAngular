@@ -12,13 +12,20 @@ import { HeroFilterPipe } from '../../pipes/hero-filter.pipe';
 
 @Component({
   selector: 'app-custom-page',
-  imports: [ToggleCasePipe, CanFlyPipe, HeroColorPipe, HeroTextColorPipe,
-    TitleCasePipe, HeroCreatorPipe, HeroSortByPipe, HeroFilterPipe],
+  imports: [
+    ToggleCasePipe,
+    CanFlyPipe,
+    HeroColorPipe,
+    HeroTextColorPipe,
+    TitleCasePipe,
+    HeroCreatorPipe,
+    HeroSortByPipe,
+    HeroFilterPipe,
+  ],
   templateUrl: './custom-page.component.html',
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class CustomPageComponent {
-
   name = signal('Marcelo Fuentes');
 
   upperCase = signal(true);
@@ -28,5 +35,4 @@ export default class CustomPageComponent {
   sortBy = signal<keyof Hero | null>(null);
 
   searchQuery = signal('');
-
 }

@@ -8,8 +8,6 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class NumbersPageComponent {
-
   totalSells = signal(24561262.5658);
   percent = signal(0.4598);
-
 }

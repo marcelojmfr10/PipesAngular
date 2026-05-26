@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-
   {
     path: 'basic',
     title: 'Pipes Básicos',
@@ -15,7 +14,8 @@ export const routes: Routes = [
   {
     path: 'uncommon',
     title: 'Pipes no tan comúnes',
-    loadComponent: () => import('./pages/uncommon-page/uncommon-page.component'),
+    loadComponent: () =>
+      import('./pages/uncommon-page/uncommon-page.component'),
   },
   {
     path: 'custom',
@@ -25,6 +25,5 @@ export const routes: Routes = [
   {
     path: '**',
     redirectTo: 'basic',
-  }
-
+  },
 ];

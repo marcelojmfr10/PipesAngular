@@ -4,13 +4,12 @@ export type AvailableLocale = 'es' | 'fr' | 'en';
 
 @Injectable({ providedIn: 'root' })
 export class LocaleService {
-
   private currentLocale = signal<AvailableLocale>('es');
 
   constructor() {
     this.currentLocale.set(
-      localStorage.getItem('locale') as AvailableLocale ?? 'es'
-    )
+      (localStorage.getItem('locale') as AvailableLocale) ?? 'es',
+    );
   }
 
   get getLocale() {
@@ -22,6 +21,4 @@ export class LocaleService {
     this.currentLocale.set(locale);
     window.location.reload();
   }
-
-
 }
